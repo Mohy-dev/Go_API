@@ -8,7 +8,7 @@
 
 ## How To Use ⬇️
 
-Run the server in the terminal by command below
+Use the command below to launch the server in the terminal
 
 ```bash
 go run main.go api_methods.go
