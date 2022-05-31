@@ -19,10 +19,11 @@ var books = []Book{
 }
 
 func main() {
-	route := gin.Default()                 // Responsible for handling different routes and endpoint apis
-	route.GET("/books", getBooks)          // Get request to get books
-	route.POST("/books", createBooks)      // Post request to append book (will be cached only in the ram for now)
-	route.GET("/books:id", getBookByID)    // Get request to get a book by id
-	route.PATCH("/books:id", checkOutBook) // Patch request to check out the book if it is available
-	route.Run("localhost:8080")            // Router will listen and serve on port 8080
+	route := gin.Default()                           // Responsible for handling different routes and endpoint apis
+	route.GET("/books", getBooks)                    // Get request to get books
+	route.POST("/books", createBooks)                // Post request to append book (will be cached only in the ram for now)
+	route.GET("/books/:id", getBookByID)             // Get request to get a book by id
+	route.PATCH("/books/checkout/:id", checkOutBook) // Patch request to check out the book if it is available
+	route.DELETE("/books/:id", deleteBook)           // Delete request to delete a book
+	route.Run("localhost:8080")                      // Router will listen and serve on port 8080
 }
