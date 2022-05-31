@@ -49,3 +49,15 @@ func checkOutBook(c *gin.Context) {
 	}
 	c.JSON(http.StatusNotFound, gin.H{"error": "Book not found"})
 }
+
+func deleteBook(c *gin.Context) {
+	id := c.Param("id")
+	for i, book := range books {
+		if book.ID == id {
+			books = append(books[:i], books[i+1:]...)
+			c.JSON(http.StatusOK, gin.H{"success": "Book deleted successfully"})
+			return
+		}
+	}
+	c.JSON(http.StatusNotFound, gin.H{"error": "Book not found"})
+}
