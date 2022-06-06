@@ -15,10 +15,10 @@ go run main.go api_methods.go
 ```
 # Routes:
 ```go
-    route.GET("/books", getBooks)                    // Get request to get books
-	route.POST("/books", createBooks)                // Post request to append book (will be cached only in the ram for now)
-	route.GET("/books/:id", getBookByID)             // Get request to get a book by id
-	route.PATCH("/books/checkout/:id", checkOutBook) // Patch request to check out the book if it is available
-	route.DELETE("/books/:id", deleteBook)           // Delete request to delete a book
+route.GET("/books", getBooks)                    // Get request to get books
+route.POST("/books", createBooks)                // Post request to append book (will be cached only in the ram for now)
+route.GET("/books/:id", getBookByID)             // Get request to get a book by id
+route.PATCH("/books/checkout/:id", checkOutBook) // Patch request to check out the book if it is available
+route.DELETE("/books/:id", deleteBook)           // Delete request to delete a book
 ```
 ---
